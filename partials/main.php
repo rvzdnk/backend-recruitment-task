@@ -5,7 +5,7 @@ $users = $controller->getAllUsers();
 ?>
 
 <table class="table">
-    <thead class="table_head">
+    <thead class="table__head">
         <th>Name</th>
         <th>Username</th>
         <th>Email</th>

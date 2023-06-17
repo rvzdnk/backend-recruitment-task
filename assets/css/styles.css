@@ -1,8 +1,8 @@
 /*Add your custom styles here*/
-main{
+body{
+    font-family: Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .table{
@@ -14,22 +14,28 @@ main{
     text-align: center;
 }
 
-thead{
+.table__head{
+    color: #fff;
     background-color:grey;
+    border: 2px solid #000;
+    letter-spacing: 0.03em;
 }
 
-tr{
-    &:nth-child(2n){
-        background-color: skyblue;
-    }
-}
-
-th{
+.table__head th{
     padding: 16px;
     border: 1px solid #000;
 }
 
-td{
-    padding: 6px 10px;
+.table__body tr:nth-child(2n){
+    background-color: lightgrey;
+}
+
+.table__body tr:hover{
+    background-color: lightgreen;
+}
+
+.table__body td{
+    padding: 12px;
     border:1px solid #000;
+    font-size: 0.9rem;
 }
