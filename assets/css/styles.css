@@ -1,4 +1,14 @@
 /*Add your custom styles here*/
-.starting-title {
-    text-align: center;
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table{
+    border-collapse: collapse;
+    table-layout: fixed;
+    background-color: #fff;
+    width: 100%;
+    border:3px solid #000;
 }

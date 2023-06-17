@@ -4,27 +4,29 @@ $controller = new UserController();
 $users = $controller->getAllUsers();
 ?>
 
-<table>
-    <tr>
+<table class="table">
+    <thead class="table_head">
         <th>Name</th>
         <th>Username</th>
         <th>Email</th>
         <th>Address</th>
         <th>Phone</th>
         <th>Company</th>
-        <th>Action</th>
-    </tr>
-
-    <?php foreach ($users as $user): ?>
-    <tr>
-        <td><?php echo $user['name']; ?></td>
-        <td><?php echo $user['username']; ?></td>
-        <td><?php echo $user['email']; ?></td>
-        <td><?php echo $user['address']['street']; ?></td>
-        <td><?php echo $user['phone']; ?></td>
-        <td><?php echo $user['company']['name']; ?></td>
-    </tr>
-    <?php endforeach; ?>
+    </thead>
+    <tbody class="table__body">
+    <?php foreach ($users as $user){
+        echo
+        "<tr>
+            <td> ".$user['name']." </td>
+            <td> ".$user['username']." </td>
+            <td> ".$user['email']." </td>
+            <td> ".$user['address']['street'].", ".$user['address']['zipcode']." ".$user['address']['city']." </td>
+            <td> ".$user['phone']." </td>
+            <td> ".$user['company']['name']." </td>
+        </tr>";
+    };
+    ?>
+    </tbody>
 </table>
 
 

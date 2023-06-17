@@ -1,6 +1,6 @@
 <?php
 
-require_once '../models/UserModel.php';
+require_once './partials/models/UserModel.php';
 
 class UserController {
     private $userModel;
@@ -16,5 +16,4 @@ class UserController {
     }
 
 }
-
 ?>
