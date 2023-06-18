@@ -1,4 +1,4 @@
-# Backend/Full-stack recruitment task
+# Backend/Full-stack recruitment task - Rafał Zdunek
 
 ----
 
