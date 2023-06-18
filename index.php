@@ -13,6 +13,6 @@
     <?php require_once './partials/main.php'; ?>
 </main>
 
-<script src="assets/js/script.js"></script>
+<script src="./assets/js/script.js"></script>
 </body>
 </html>
