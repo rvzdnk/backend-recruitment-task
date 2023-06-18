@@ -1,5 +1,5 @@
 <?php
-require_once "./partials/controllers/SiteController.php";
+require_once "./controllers/SiteController.php";
 $controller = new SiteController();
 
 ?>

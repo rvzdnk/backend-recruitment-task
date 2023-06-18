@@ -1,6 +1,6 @@
 <?php
 
-require_once './partials/controllers/UserController.php';
+require_once './controllers/UserController.php';
 
 class SiteController {
 
