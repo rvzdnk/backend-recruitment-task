@@ -13,21 +13,30 @@ $controller = new UserController();
         <th>Address</th>
         <th>Phone</th>
         <th>Company</th>
+        <th></th>
     </thead>
     <tbody class="table__body">
-    <?php 
+    <?php
     $users = $controller->handleRequest();
-    foreach ($users as $user){
-        echo
-        "<tr>
-            <td> ".$user['name']." </td>
-            <td> ".$user['username']." </td>
-            <td> ".$user['email']." </td>
-            <td> ".$user['address']['street'].", ".$user['address']['zipcode']." ".$user['address']['city']." </td>
-            <td> ".$user['phone']." </td>
-            <td> ".$user['company']['name']." </td>
-        </tr>";
-    };
+        foreach($users as $user){
+            echo ("
+            <tr>
+                <td> ".$user['name']." </td>
+                <td> ".$user['username']." </td>
+                <td> ".$user['email']." </td>
+                <td> ".$user['address']['street'].", ".$user['address']['zipcode']." ".$user['address']['city']." </td>
+                <td> ".$user['phone']." </td>
+                <td> ".$user['company']['name']." </td>
+                <td>
+                    <form method='post'>
+                        <button type='submit' name='btn--delete' value='".$user['id']."'>
+                            REMOVE BUTTON
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            ");
+        }
     ?>
     </tbody>
 </table>

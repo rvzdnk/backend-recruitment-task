@@ -13,7 +13,12 @@ class UserController {
     }
 
     public function handleRequest(){
-        if(isset($_POST['btn--submit'])){
+        if (isset($_POST['btn--delete'])){
+            $userId = $_POST['btn--delete'];
+            $users = $this->deleteUser($userId);
+            return $users;
+        }
+        elseif(isset($_POST['btn--submit'])){
             $entryData = array(
                 'name' => $_POST['name'],
                 'username' =>$_POST['username'],
@@ -26,7 +31,8 @@ class UserController {
             );
             $users = $this->addNewUser($entryData);
             return $users;
-        } else {
+        }
+        else{
             $users = $this->getAllUsers();
             return $users;
         };
@@ -37,14 +43,22 @@ class UserController {
     }
 
     public function addNewUser($entryData){
-        $data = json_decode(file_get_contents($this->dataPath), true);
+        $users = $this->getAllUsers();
         $newUserArray = $this->userModel->newUser($entryData);
-        $data[] = $newUserArray;
-        return $data;
+        $users[] = $newUserArray;
+        return $users;
     }
 
-
-
+    public function deleteUser($userId){
+        $users = $this->getAllUsers();
+        foreach ($users as $index => $user) {
+            if ($user['id'] == $userId) {
+                array_splice($users, $index, 1);
+                file_put_contents($this->dataPath, json_encode($users));
+                break;
+            }
+        }
+        return $users;
+    }
 }
-
 ?>
