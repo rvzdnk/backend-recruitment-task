@@ -11,13 +11,21 @@ class UserModel {
             'email' => $entryData['email'],
             'address' => [
                 'street' => $entryData['street'],
+                'suite' => '',
                 'city' => $entryData['city'],
                 'zipcode' => $entryData['zipcode'],
+                'geo' => [
+                    'lat' => '',
+                    'lng' => ''
+                ]
             ],
             'phone' => $entryData['phone'],
+            'website' => '',
             'company' => [
                 'name' => $entryData['company'],
-            ],
+                'catchPhrase' => '',
+                'bs' => ''
+            ]
         ];
 
         return $newUserArray;

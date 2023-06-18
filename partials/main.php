@@ -1,6 +1,6 @@
 <?php
-require_once "./partials/controllers/UserController.php";
-$controller = new UserController();
+require_once "./partials/controllers/SiteController.php";
+$controller = new SiteController();
 
 ?>
 
