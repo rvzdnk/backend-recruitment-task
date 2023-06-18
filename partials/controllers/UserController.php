@@ -13,31 +13,52 @@ class UserController {
     }
 
     public function getAllUsers(){
-        return json_decode(file_get_contents($this->dataPath), true);
+        try{
+            return json_decode(file_get_contents($this->dataPath), true);
+        }
+        catch (Exception $e){
+            throw new Exception('Error' . $e->getCode() .":". $e->getMessage());
+        }
     }
 
     public function saveJsonFile($data){
-        file_put_contents($this->dataPath, json_encode($data));
+        try{
+            file_put_contents($this->dataPath, json_encode($data));
+        }
+        catch (Exception $e){
+            throw new Exception('Error' . $e->getCode() .":". $e->getMessage());
+        }
     }
 
     public function addNewUser($entryData){
-        $users = $this->getAllUsers();
-        $newUserArray = $this->userModel->newUser($entryData);
-        array_push($users, $newUserArray);
-        $this->saveJsonFile($users);
-        return $users;
+        try{
+            $users = $this->getAllUsers();
+            $newUserArray = $this->userModel->newUser($entryData);
+            array_push($users, $newUserArray);
+            $this->saveJsonFile($users);
+            return $users;
+        }
+        catch (Exception $e){
+            throw new Exception('Error' . $e->getCode() .":". $e->getMessage());
+        }
     }
 
     public function deleteUser($userId){
-        $users = $this->getAllUsers();
-        foreach ($users as $index => $user) {
-            if ($user['id'] == $userId) {
-                array_splice($users, $index, 1);
-                $this->saveJsonFile($users);
-                break;
+        
+        try{
+            $users = $this->getAllUsers();
+            foreach ($users as $index => $user) {
+                if ($user['id'] == $userId) {
+                    array_splice($users, $index, 1);
+                    $this->saveJsonFile($users);
+                    break;
+                }
             }
+            return $users;
         }
-        return $users;
+        catch (Exception $e){
+            throw new Exception('Error' . $e->getCode() .":". $e->getMessage());
+        }
     }
 }
 ?>

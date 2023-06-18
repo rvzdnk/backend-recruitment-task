@@ -12,6 +12,7 @@ class SiteController {
     }
 
     public function handleRequest(){
+        try{
         $userController = new UserController();
         if (isset($_POST['btn--delete'])){
             $userId = $_POST['btn--delete'];
@@ -36,7 +37,9 @@ class SiteController {
             $users = $userController->getAllUsers();
             return $users;
         };
+        } catch (Exception $e){
+            throw new Exception('Error' . $e->getCode() .":". $e->getMessage());
+        }
     }
 }
-
 ?>
