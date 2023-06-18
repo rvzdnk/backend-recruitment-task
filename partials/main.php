@@ -9,19 +9,22 @@ $controller = new SiteController();
         <h1 class="main-title"> Check current users or </h1>
         <button class="btn btn--open">Add new user</button>
     </div>
-    <table class="table">
-        <thead class="table__head">
-            <th>Name</th>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Address</th>
-            <th>Phone</th>
-            <th>Company</th>
-            <th></th>
-        </thead>
-        <tbody class="table__body">
-        <?php
+    <?php
         $users = $controller->handleRequest();
+        if(count($users) != 0){
+    echo ("
+        <table class='table'>
+            <thead class='table__head'>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Company</th>
+                <th></th>
+            </thead>
+            <tbody class='table__body'>
+        ");
             foreach($users as $user){
                 echo ("
                 <tr>
@@ -41,9 +44,12 @@ $controller = new SiteController();
                 </tr>
                 ");
             }
+        } else {
+            echo "<p>There are not any users</p>";
+        }
         ?>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
     <div class = "modal hidden">
         <div class="modal__wrapper-btn">
             <button class="modal__btn--close">⨉</button>

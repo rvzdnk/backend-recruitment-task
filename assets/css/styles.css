@@ -18,8 +18,8 @@ body{
 }
 
 .main-title{
-    margin: 0 5px 0 0;
-    letter-spacing: 3px;
+    margin: 0 .5em 0 0;
+    letter-spacing: .1em;
     text-transform: uppercase;
 }
 
