@@ -11,6 +11,18 @@ body{
     align-items: center;
 }
 
+.container__header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-title{
+    margin: 0 5px 0 0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
 .table{
     border-collapse: collapse;
     table-layout: fixed;
@@ -28,7 +40,11 @@ body{
 }
 
 .table__head th{
-    padding: 16px;
+    padding: 5px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
     border: 1px solid #000;
 }
 
@@ -44,11 +60,30 @@ body{
     padding: 12px 8px;
     border:1px solid #000;
     font-size: 0.9rem;
+    letter-spacing: 1px;
 }
 
-.btn--open{
+.btn{
     font-size: 0.8rem;
     padding: 5px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.btn:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
 }
 
 .modal {
@@ -57,13 +92,14 @@ body{
     gap: 0.4rem;
     width: 250px;
     padding: 1.3rem;
-    min-height: 250px;
-    position: absolute;
+    position: fixed;
+    top: 10%;
     z-index: 2;
     background-color: white;
     border: 1px solid #ddd;
-    border-radius: 15px;
     text-align: center;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+
 }
 
 .modal__wrapper-btn{
@@ -75,6 +111,16 @@ body{
 .modal__btn--close{
     font-size: 0.8rem;
     padding: 5px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.modal__title{
+    margin: 0 0 5px 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .form {
@@ -85,6 +131,12 @@ body{
 
 .form input {
     margin: 0px 0px 10px 0px;
+}
+
+.form label {
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
 .overlay {
