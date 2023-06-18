@@ -2,8 +2,9 @@
 require_once "./partials/controllers/UserController.php";
 $controller = new UserController();
 $users = $controller->getAllUsers();
-?>
 
+?>
+<div class="container">
 <table class="table">
     <thead class="table__head">
         <th>Name</th>
@@ -28,5 +29,9 @@ $users = $controller->getAllUsers();
     ?>
     </tbody>
 </table>
+<div class = "modal hidden"></div>
+<div class = "overlay hidden"></div>
+<button class = "btn--open">Add new user</button>
+</div>
 
 

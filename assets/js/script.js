@@ -1,3 +1,12 @@
-// Add your custom scripts here
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const openModalBtn = document.querySelector(".btn--open");
 
-console.log('Good luck 👌');
+
+
+openModalBtn.addEventListener("click", ()=>
+    {
+        modal.classList.remove("hidden");
+        overlay.classList.remove("hidden");
+    }
+);
