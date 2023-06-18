@@ -1,5 +1,5 @@
 
-Rafał Zdunek
+# Rafał Zdunek
 
 # Backend/Full-stack recruitment task - 
 
